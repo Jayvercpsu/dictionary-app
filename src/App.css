@@ -1,0 +1,78 @@
+/* App.css */
+
+/* Set container styles */
+.container {
+  max-width: 100%;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+}
+
+/* Style trash icon */
+.trash-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Style archived todo items */
+.archived .list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Add margin to buttons inside archived todo items */
+.archived .list-group-item .btn {
+  margin-left: 5px;
+}
+
+/* Add hover effects to list items */
+.list-group-item:hover {
+  background-color: #f8f9fa;
+}
+
+/* Add hover effects to buttons */
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* ConfirmationPopup.css */
+
+/* Style the confirmation popup */
+.confirmation-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the content inside the confirmation popup */
+.confirmation-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Style paragraphs inside the confirmation popup */
+.confirmation-content p {
+  margin-bottom: 10px;
+}
+
+/* Style buttons inside the confirmation popup */
+.buttons button {
+  margin-right: 10px;
+}
+
+/* Style last button inside the confirmation popup */
+.buttons button:last-child {
+  margin-right: 0;
+}
