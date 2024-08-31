@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Test Game</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css ">
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    .word-box {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      margin-bottom: 20px;
+      transform: perspective(1000px) rotateX(10deg);
+      transition: all 0.3s ease-in-out;
+    }
+    .word-box:hover {
+      transform: perspective(1000px) rotateX(0deg) scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+    .btn {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+    footer {
+      margin-top: 20px;
+      font-size: 0.8em;
+      color: #777;
+    }
+    .container {
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container text-center mt-5">
+    <h1 class="mb-4">Typing Test Game</h1>
+    <div class="form-group">
+      <label for="difficulty">Difficulty:</label>
+      <select id="difficulty" class="form-control w-50 mx-auto">
+        <option value="easy">Easy</option>
+        <option value="normal">Normal</option>
+        <option value="hard">Hard</option>
+        <option value="funny">Funny</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="duration">Duration:</label>
+      <select id="duration" class="form-control w-50 mx-auto">
+        <option value="30">30 Seconds</option>
+        <option value="60">1 Minute</option>
+        <option value="120">2 Minutes</option>
+        <option value="180">3 Minutes</option>
+      </select>
+    </div>
+    <div id="word-box" class="word-box">
+      <p id="word" class="display-4"></p>
+    </div>
+    <input type="text" id="input-box" class="form-control w-50 mx-auto" placeholder="Start typing..." disabled>
+    <div class="scoreboard mt-3">
+      <p>Time Left: <span id="time-left">0</span>s</p>
+      <p>Score: <span id="score">0</span></p>
+    </div>
+    <button id="start-btn" class="btn btn-primary mt-3">Start</button>
+    <button id="stop-btn" class="btn btn-danger mt-3" style="display: none;">Stop</button>
+    <button id="cancel-btn" class="btn btn-warning mt-3" style="display: none;">Cancel</button>
+    <button id="reset-btn" class="btn btn-secondary mt-3" style="display: none;">Reset</button>
+    <div class="nickname form-group mt-3">
+      <label for="nickname">Nickname:</label>
+      <input type="text" id="nickname" class="form-control w-50 mx-auto" placeholder="Enter nickname">
+    </div>
+    <div class="leaderboard mt-4">
+      <h2>Leaderboard</h2>
+      <ul id="leaderboard-list" class="list-group w-50 mx-auto"></ul>
+    </div>
+    <footer class="text-center">
+      <p>Powered by JayverAldev</p>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
